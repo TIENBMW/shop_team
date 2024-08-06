@@ -91,30 +91,45 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
+        "type": "View",
         "viewType": "XML",
         "async": true,
         "viewPath": "shopteam1.view",
+        "path": "shopteam1.view",
         "controlAggregation": "pages",
-        "controlId": "app",
+        "controlId": "flexibleColumnLayout",
+        "transition": "slide",
+        "bypassed": {
+				},
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteApp",
-          "pattern": ":?query:",
-          "target": [
-            "TargetApp"
-          ]
-        }
+					"pattern": ":layout:",
+					"name": "list",
+					"target": [
+						"list",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{product}/{layout}",
+					"name": "detail",
+					"target": [
+						"list",
+						"detail"
+					]
+				}
       ],
       "targets": {
-        "TargetApp": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "App",
-          "viewName": "App"
-        }
+        "list": {
+					"name": "List",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"name": "Detail",
+					"controlAggregation": "midColumnPages"
+				}
       }
     },
     "rootView": {
