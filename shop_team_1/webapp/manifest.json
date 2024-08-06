@@ -55,9 +55,11 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.ushell": {},
+        "sap.uxap": {}
       }
     },
+    
     "contentDensities": {
       "compact": true,
       "cozy": true
