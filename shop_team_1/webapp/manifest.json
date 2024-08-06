@@ -118,7 +118,7 @@
     "rootView": {
       "viewName": "shopteam1.view.App",
       "type": "XML",
-      "async": true,
+      "async": false,
       "id": "App"
     }
   }
